@@ -1,0 +1,546 @@
+/* Mobile First Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6181A2;
+    /* sfa blue */
+    --headings-color: #5A8769;
+    /* Sage Green */
+    --secondary-color: #E9C46A;
+    /* Mustard Yellow */
+    --accent-color: #89342F;
+    /* Cinnamon */
+    --neutral-background: #F9F5F0;
+    /* Linen */
+    --dark-text: #343A40;
+    /* Charcoal Gray */
+    --light-text: #FFFFFF;
+    /* White */
+    --success-color: #A7D1AB;
+    /* Pastel Green */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Article page styling */
+.article-container {
+    max-width: 800px;
+    margin: 11em auto 4em;
+    padding: 0 var(--spacing-md);
+    background-color: var(--neutral-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+}
+
+#articles h2 {
+    margin-bottom: 10px;
+    /* Reduce the margin-bottom */
+}
+
+
+/* Add a subtle background pattern */
+.article-content {
+    background: linear-gradient(to right bottom, #f9f5f0, #e9d8a6);
+    padding: 20px;
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
+.article-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.article-content img {
+    max-width: 100%;
+    margin: var(--spacing-md) 0;
+    border-radius: 4px;
+}
+
+.article-navigation {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.back-button i {
+    margin-right: 8px;
+    color: var(--heading-color);
+}
+
+.related-articles {
+    margin-top: var(--spacing-md);
+}
+
+.related-articles h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--headings-color);
+}
+
+.related-articles ul {
+    list-style: none;
+    padding: 0;
+}
+
+.related-articles li {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Update article card links on index page */
+.article-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-sm);
+}
+
+.read-more {
+    display: inline-block;
+    text-decoration: none;
+    color: #5A8769;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.read-more:after {
+    content: " →";
+    transition: margin-left 0.2s;
+}
+
+.read-more:hover:after {
+    margin-left: 3px;
+}
+
+/* Image bubble effect */
+.image-bubble {
+    position: relative;
+    width: 60%;
+    float: left;
+    shape-outside: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    margin: 10px 20px 10px 0;
+}
+
+.image-bubble-1 {
+    position: relative;
+    width: 60%;
+    float: left;
+    shape-outside: circle(50%);
+    clip-path: circle(50%);
+    margin: 10px 20px 10px 0;
+}
+
+.image-bubble img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-bubble-1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-bubble.float-right {
+    float: right;
+    /* Adjust margin to create space on the left of the image */
+    margin: 10px 0 10px 20px;
+}
+
+.image-bubble-1.float-right {
+    float: right;
+    /* Adjust margin to create space on the left of the image */
+    margin: 10px 0 10px 20px;
+}
+
+/* Family Financial Meetings Page Styling */
+
+h1 {
+    color: var(--headings-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+ul,
+ol {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Emphasize the Sample Agenda */
+.agenda-section {
+    background-color: rgba(var(--secondary-color-rgb), 0.1);
+    border: 1px solid var(--secondary-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.agenda-section h3 {
+    color: var(--headings-color);
+    margin-top: 0;
+}
+
+.agenda-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.agenda-section li {
+    font-weight: 500;
+}
+
+/* Style the Resources section */
+section#resources {
+    padding-bottom: 1em;
+}
+
+.resource-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resource-list li {
+    margin-bottom: 10px;
+}
+
+.resource-list a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.resource-list a:hover {
+    text-decoration: underline;
+}
+
+.resource-card {
+    background-color: var(--secondary-color);
+    padding: 5px;
+    border-radius: 8px;
+    color: var(--dark-text);
+    margin-bottom: 30px;
+}
+
+.resource-card a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.resource-card a:hover {
+    text-decoration: underline;
+}
+
+#resources.section h2 {
+    color: var(--headings-color);
+    margin-top: 0;
+}
+
+/* Calculator Styling */
+.calculator-container {
+    background-color: var(--neutral-background);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* margin-bottom: 20px; */
+}
+
+.calculator-container h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.calculator-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    /* Increase label text size */
+}
+
+.input-group input {
+    padding: 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 4px;
+    font-size: 1.2em;
+    background-color: #fff;
+}
+
+#calculateButton {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.2em;
+
+}
+
+Hover effect #calculateButton:hover {
+    opacity: 0.8;
+
+}
+
+/* styles.css */
+.calculate-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+
+}
+
+.calculator-results {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.5em;
+
+}
+
+.calculator-results h3 {
+    color: var(--headings-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.calculator-results p {
+    color: var(--accent-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+/* Reset Button Styling */
+#resetButton {
+    background-color: #6c757d;
+    /* Gray color */
+    color: var(--light-text);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.2em;
+    /* Increase button text size */
+    margin-left: 10px;
+    /* Add some spacing between the buttons */
+}
+
+#resetButton:hover {
+    opacity: 0.8;
+    /* Reduce opacity on hover */
+}
+
+
+/* Budget Template Styling */
+.budget-template-container {
+    background: linear-gradient(to right bottom, #f9f5f0, #e9d8a6);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: 1px solid var(--secondary-color);
+    /* Add a border */
+}
+
+.budget-template-container h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.budget-template-container h3 {
+    color: var(--secondary-color);
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#budget-form .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    background-color: #e3dec7;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#budget-form .input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#budget-form .input-group input {
+    padding: 8px;
+    border: 1px solid var(--accent-color);
+    /* Add border to input fields */
+    border-radius: 4px;
+
+}
+
+.download {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    color: var(--headings-color);
+    font-size: 1.25rem;
+    text-decoration: none;
+
+}
+
+#download-budget {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    /* Adds space between the buttons */
+    margin-top: 20px;
+}
+
+/* Styling for the new budget reset button */
+#reset-budget {
+    background-color: #6c757d;
+    /* A neutral gray color */
+    color: var(--light-text);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+#reset-budget:hover {
+    opacity: 0.8;
+}
+
+/* Budget Template Example Styling */
+.budget-template-example {
+    background-color: var(--neutral-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    /* Center the image and text */
+}
+
+.budget-template-example h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.budget-template-example img {
+    max-width: 100%;
+    /* Make the image responsive */
+    height: auto;
+    border: 1px solid #ddd;
+    /* Add a border to the image */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.budget-template-example p {
+    font-style: italic;
+    color: #777;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .image-bubble {
+        width: 40%;
+        margin: 10px auto;
+        float: none;
+        shape-outside: none;
+        clip-path: none;
+        text-align: center;
+    }
+
+    .image-bubble-1 {
+        width: 40%;
+        margin: 10px auto;
+        float: none;
+        shape-outside: none;
+        clip-path: none;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-container {
+        max-width: 800px;
+        margin: 11em auto 1em;
+        padding: 0 var(--spacing-md);
+        background-color: var(--neutral-background);
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}

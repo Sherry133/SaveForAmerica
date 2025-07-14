@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #525883;
+    --text-color: #333;
+    --light-bg: #f5f5f5;
+    --white: #ececec;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: transparent;
+    padding-top: 10px;
+}
+
+/* Navigation */
+nav {
+    background: transparent;
+    padding: 1em 20px !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+
+}
+
+.logo-text {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5) !important;
+    color: var(--white);
+    /* color: goldenrod !important; */
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+body.home span.logo-text {
+    font-size: 1.75rem;
+    /* Stronger text shadow for better contrast on hero image */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7),
+        0px 0px 10px rgba(0, 0, 0, 0.4);
+
+    /* Same gradient but with more pronounced shine */
+    background: linear-gradient(to right,
+            #462523 0%,
+            #cb9b51 22%,
+            #f6e27a 45%,
+            #ffffff 50%,
+            #f6e27a 55%,
+            #cb9b51 58%,
+            #462523 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+
+    /* Slightly faster animation for home page */
+    background-size: 200% auto;
+    animation: shimmer 3.5s linear infinite;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@supports not (background-clip: text) {
+    .logo-text {
+        color: #cb9b51 !important;
+    }
+
+    body.home span.logo-text {
+        color: #f6e27a !important;
+    }
+}
+
+.logo-image {
+    height: 120px;
+    width: auto;
+    margin-top: 0;
+    margin-left: 2em;
+
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 8px;
+    color: inherit;
+
+}
+
+
+.logo-link:hover {
+    text-decoration: none;
+}
+
+
+
+.dark-header .hamburger span {
+    background-color: var(--white);
+    /* White lines for dark backgrounds */
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+.dark-header .logo-text {
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.dark-header .menu-label {
+    color: var(--white);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* You might also need to adjust the header background */
+.light-header header {
+    background-color: var(--white);
+    box-shadow: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.dark-header header {
+    background-color: transparent;
+    position: absolute;
+}
+
+h1.hero {
+    color: var(--white);
+}
+
+/* Update the nav-links to open from the right side */
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background: linear-gradient(to bottom, #e9d8a6, #E9C46A);
+    /* Linen to a slightly darker linen */
+    padding: var(--spacing-md);
+    flex-direction: column;
+    gap: var(--spacing-md);
+    box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    border-radius: 10px;
+    /* Round the corners */
+}
+
+/* Add smooth animation for opening from right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.nav-links.active {
+    display: flex;
+    animation: slideInRight 0.3s ease forwards;
+}
+
+/* Style the nav items for better appearance in the sidebar */
+.nav-links li {
+    list-style: none;
+    /* Remove dots */
+    padding: 0;
+    /* Remove default padding */
+    margin: 0;
+    /* Remove default margin */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Add dividing line */
+}
+
+/* Remove the border from the last item */
+.nav-links li:last-child {
+    border-bottom: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    display: block;
+    /* Make the entire li clickable */
+    padding: 10px 15px;
+    /* Add padding for better spacing */
+    color: var(--text-color);
+    /* Use your text color variable */
+}
+
+/* Add hover effect */
+.nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Light background on hover */
+    color: var(--accent-color);
+    /* Change text color on hover */
+}
+
+/* Optional: Add a nice header to the menu */
+.nav-links::before {
+    content: "Navigation";
+    display: block;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 4px 4px;
+    width: 30px;
+    height: 25px;
+    margin-top: 0;
+
+}
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/*adjust menu and hamburger */
+.menu-label {
+    color: var(--headings-color);
+    margin-left: 8px;
+    font-size: 0.9rem;
+    margin-top: 0;
+    letter-spacing: 2px;
+    font-weight: 900;
+    margin-right: 0.5rem;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: 0.3s;
+    display: block;
+    border-radius: 1px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+    .logo-image {
+        height: 90px !important;
+        /* Smaller on mobile */
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+        /* Smaller on mobile */
+    }
+
+    header {
+        padding-top: 5px;
+        /* Less padding on mobile */
+    }
+
+    nav {
+        padding: 0.5rem 1rem;
+        /* Less padding on mobile */
+    }
+
+    .logo-image {
+        height: 60px;
+        /* Smaller logo on mobile */
+        margin-left: 1em;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+        margin-right: 1em;
+
+    }
+
+    /* Ensure the hamburger menu is visible and nav links are hidden by default */
+    .hamburger {
+        display: flex;
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide full nav menu */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* MEDIA QUERIES */
+
+/* For even smaller screens */
+@media screen and (max-width: 480px) {
+    .logo-image {
+        height: 90px !important;
+        margin-left: 0 !important;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .hamburger {
+        width: 35px;
+        height: auto;
+        margin-left: 12em;
+    }
+
+    /* Optional: Make the hamburger lines thicker */
+    .hamburger span {
+        height: 3px;
+        margin-bottom: 5px;
+    }
+
+    .hamburger span:last-child {
+        margin-bottom: 0;
+    }
+
+    .menu-label {
+        margin-right: 0 !important;
+    }
+}
