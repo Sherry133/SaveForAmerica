@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body class="dark-header home">
@@ -279,7 +280,7 @@
             <p>We'd love to hear how you teach your children money
                 management! </p>
             <div class="contact-form">
-                <form method="post"
+                <form id="contact-form" method="post"
                     action="https://formspree.io/f/mrgoyglo">
                     <div class="form-group grid-container">
                         <label for="name">Name <span
@@ -303,6 +304,10 @@
                             id="subject" name="subject"
                             placeholder="Enter the subject">
                     </div>
+                    <!-- Add this honeypot field. It should be invisible. -->
+                    <input type="text" name="_gotcha"
+                        style="display:none">
+
 
                     <div class="form-group grid-container">
                         <label for="message">Message <span
@@ -313,17 +318,24 @@
                             required></textarea>
                     </div>
 
-                    <button type="submit" class="submit-button">Send
-                        Message</button>
-                    <button type="reset"
-                        class="reset-button">Reset</button>
+                    <div class="form-buttons">
+                        <button type="submit" class="submit-button">Send
+                            Message</button>
+                        <button type="reset"
+                            class="reset-button">Reset</button>
+                    </div>
                 </form>
+                <!-- Add containers for success and error messages -->
+                <div id="form-success-message"
+                    class="form-message success">Your message
+                    has been sent successfully!</div>
+                <div id="form-error-message" class="form-message error">
+                    There was an
+                    error sending your message. Please try again.</div>
             </div>
+
         </section>
     </main>
-    <!-- This div would be shown/hidden with JavaScript when form is submitted -->
-    <!-- <div class="form-message success">Your message has been sent successfully!</div> -->
-    <!-- <div class="form-message error">There was an error sending your message. Please try again.</div> -->
 
     <footer>
         <div class="footer-content">

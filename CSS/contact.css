@@ -105,6 +105,7 @@ textarea.form-control {
 }
 
 .form-message {
+    display: none;
     margin-top: var(--spacing-md);
     padding: var(--spacing-sm);
     border-radius: 4px;
