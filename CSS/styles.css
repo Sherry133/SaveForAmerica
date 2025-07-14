@@ -510,9 +510,11 @@ footer {
 }
 
 .footer-logo img {
+    display: grid;
+    width: 100%;
     max-width: 150px;
-
     height: auto;
+
 }
 
 .footer-links li {

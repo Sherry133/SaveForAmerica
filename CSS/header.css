@@ -384,6 +384,7 @@ h1.hero {
     }
 
     .menu-label {
-        margin-right: 0 !important;
+        display: none;
+
     }
 }
