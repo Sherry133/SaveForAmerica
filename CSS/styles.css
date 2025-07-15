@@ -105,7 +105,7 @@ body {
 
 /* Buttons */
 /* Responsive adjustments */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .hero-content h1 {
         font-size: 1.8rem;
     }
@@ -113,7 +113,7 @@ body {
     .hero-content p {
         font-size: 1rem;
     }
-}
+} */
 
 
 main {
@@ -362,7 +362,6 @@ li {
         padding: 0 2rem;
     }
 
-
     nav {
         padding: var(--spacing-md) var(--spacing-lg);
     }
@@ -564,7 +563,6 @@ footer {
 
 }
 
-
 .about-card {
     width: 80%;
     max-width: 800px;
@@ -661,7 +659,16 @@ footer {
 
     /* Hero Section Adjustments */
     #hero {
-        padding: 2em 1em 0 !important;
+        height: auto;
+        min-height: 90vh;
+        padding: 6rem 1em 2rem !important;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-content {
+        margin-top: 0;
+        /* Remove the top margin on mobile */
     }
 
     .hero-content h1 {
@@ -673,8 +680,6 @@ footer {
         font-size: 1.25rem;
         /* Smaller paragraph text on mobile */
     }
-
-
 
     #about {
         padding: 2rem 1rem;
@@ -747,8 +752,54 @@ footer {
         padding-left: 0;
         padding-right: 0;
     }
-
-    .hero-content h1 {
-        font-size: 2.0rem;
-    }
 }
+
+
+/* @media screen and (max-width: 767px) and (max-height: 480px) {
+
+    #hero {
+        position: relative;
+        top: 60px;
+        height: calc(100vh - 60px);
+        min-height: 250px;
+        padding-top: 1rem !important;
+    }
+
+    /* Move content down a bit */
+/* .hero-content {
+    padding-top: 1rem;
+}
+
+.hero-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+} */
+
+/* Make the video smaller */
+/* .video-container {
+    width: 50% !important;
+}
+
+/* Header adjustments for landscape */
+/* header {
+    padding: 0;
+    height: auto;
+    min-height: 60px;
+} */
+*/
+/* Adjust logo size for landscape */
+/* .logo-image {
+    height: 40px !important;
+} */
+
+/* Ensure the menu toggle is visible and positioned correctly */
+/* .menu-toggle {
+    padding: 0;
+    margin-top: 0;
+} */
+
+/* Force the body padding to be exactly right */
+/* body.light-header {
+    padding-top: 60px !important;
+}
+} */
