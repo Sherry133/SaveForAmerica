@@ -556,30 +556,49 @@ Hover effect #calculateButton:hover {
 
     .article-content p {
         padding-left: 0;
-        /* Remove left padding */
         padding-right: 0;
-        /* Remove right padding */
         max-width: none;
-        /* Remove max-width constraint */
         width: 100%;
-        /* Make paragraphs full width */
+
     }
 
     .article-content img {
         max-width: 100%;
-        /* Ensure images are responsive */
         height: auto;
-        /* Maintain aspect ratio */
+
     }
 
     .article-content {
         padding-top: .5em;
-        /* Less padding at the top */
+
     }
 
     body:not(.home) h1 {
         background-color: transparent !important;
-        /* If you want to change text color too */
+
         color: var(--headings-color) !important;
+    }
+
+    body:not(.home) h3 {
+        background-color: transparent !important;
+
+        color: var(--headings-color) !important;
+    }
+
+    /* Target all h1 elements in article pages */
+    .article-container h1,
+    .article-content h1 {
+        background-color: transparent !important;
+        /* Remove background */
+        background: none !important;
+        /* Just to be sure */
+        padding: 0.5em 0;
+        /* Adjust padding as needed */
+    }
+
+    /* Also target any specific h1 classes that might have backgrounds */
+    h1.article-title {
+        background-color: transparent !important;
+        background: none !important;
     }
 }
